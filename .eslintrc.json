@@ -1,9 +1,6 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "plugin:@javascriptreact-eslint/recommended",
-    "prettier",
-      "es6-recommended"
   ]
 
 }
