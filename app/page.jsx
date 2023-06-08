@@ -19,6 +19,7 @@ export default function Home() {
   }, []);
   return (
     <main className=" bg-gray-700 h-screen">
+      <Navbar venomConnect={venomConnect} />
       <h1 className="text-center text-[#b2ce98] text-2xl font-semibold pt-6">
         Deposit and Earn $ANTI
       </h1>
