@@ -1,9 +1,11 @@
+"use client";
 import React from "react";
-
+import { useState } from "react";
 export default function DaiV() {
+  const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <div className="bg-slate-500 rounded-md ">
-      <div className="group rounded-md shadow-xl rounded-md  p-8 flex text-center items-center justify-between bg-slate-500 w-full">
+      <div className="group rounded-md shadow-xl p-8 flex text-center items-center justify-between bg-slate-500 w-full">
         <div className="flex items-center gap-2">
           <a>
             <svg
@@ -56,7 +58,11 @@ export default function DaiV() {
           <p className="text-gray-300">APY</p>
         </div>
         <div className="">
-          <button className="bg-[#95b677] hover:bg-lime-300 p-4 rounded-md">
+          <button
+            type="button"
+            onClick={() => setNavbarOpen(!navbarOpen)}
+            className="btn bg-[#95b677] dropdown hover:bg-lime-300 p-4 rounded-md"
+          >
             <svg
               width="16"
               height="12"
@@ -72,7 +78,13 @@ export default function DaiV() {
           </button>
         </div>
       </div>
-      <div className="w-full divide-x-2  px-6 pt-10 text-white flex justify-between">
+
+      <div
+        className={
+          "w-full divide-x-2  px-6 pt-10 text-white flex justify-between" +
+          (navbarOpen ? " flex" : " hidden")
+        }
+      >
         <div className="w-1/2  pb-6 text-end p-4">
           <label className="w-full">
             <h1 className="pb-1">Balance: 0 USDT</h1>
@@ -101,7 +113,7 @@ export default function DaiV() {
           </fieldset>
           <div className="flex justify-center pt-10">
             <button className=" px-4 py-3 bg-[#95b677] rounded-md">
-              APROVE
+              APPROVE
             </button>
           </div>
         </div>
