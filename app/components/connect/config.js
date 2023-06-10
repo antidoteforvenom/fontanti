@@ -4,7 +4,7 @@ import { EverscaleStandaloneClient } from "everscale-standalone-client";
 export const initVenomConnect = async () => {
   return new VenomConnect({
     theme: "light",
-    checkNetworkId: 1,
+    checkNetworkId: 1002,
     providersOptions: {
       venomwallet: {
         walletWaysToConnect: [
@@ -28,6 +28,8 @@ export const initVenomConnect = async () => {
                       endpoint: "https://jrpc-devnet.venom.foundation/rpc",
                     },
                   },
+                  initInput:
+                    "../../../node_modules/nekoton-wasm/nekoton_wasm_bg.wasm",
                 }),
               forceUseFallback: true,
             },
